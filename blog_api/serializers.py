@@ -52,7 +52,7 @@ class CommentSerializer(serializers.ModelSerializer):
 
     def get_author_image(self, post):
         request = self.context.get('request')
-        author_image = 'https://arrownews-api-drf.herokuapp.com/' + str(post.author.profile)
+        author_image = 'https://arrownews-api-drf.herokuapp.com/media/' + str(post.author.profile)
         return request.build_absolute_uri(author_image)
 
     class Meta:
@@ -79,7 +79,7 @@ class PostSerializer(serializers.ModelSerializer):
 
     def get_author_image(self, post):
         request = self.context.get('request')
-        author_image = 'https://arrownews-api-drf.herokuapp.com/' + str(post.author.profile)
+        author_image = 'https://arrownews-api-drf.herokuapp.com/media/' + str(post.author.profile)
         return request.build_absolute_uri(author_image)
 
     class Meta:
